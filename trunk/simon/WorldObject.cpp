@@ -26,6 +26,7 @@
 
 #include <simon/WorldObject.h>
 #include <simon/config.h>
+#include <float.h> //für ISNAN/ISINF
 
 #include <assert.h>
 #include <math.h>

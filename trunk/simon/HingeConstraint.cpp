@@ -66,6 +66,7 @@
 // ----------------------------------------------------------------------------
 #include <simon/HingeConstraint.h>
 #include <iostream>  // NUR VORLAEUFIG!!!
+#include <float.h> //für ISNAN/ISINF
 
 #include <simon/SmartPointer.h>
 

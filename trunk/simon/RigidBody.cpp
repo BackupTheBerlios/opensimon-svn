@@ -22,6 +22,7 @@
 
 #include <simon/RigidBody.h>
 #include <simon/SimonState.h>
+#include <float.h> //für ISNAN/ISINF
 
 #include <simon/config.h>
 

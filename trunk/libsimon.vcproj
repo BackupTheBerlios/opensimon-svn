@@ -39,9 +39,7 @@
 			<Tool
 				Name="VCMIDLTool"/>
 			<Tool
-				Name="VCPostBuildEventTool"
-				Description="Lib nach marionette/Support/libs-win kopieren"
-				CommandLine="copy &quot;$(TargetPath)&quot; &quot;$(ProjectDir)\..\marionette\Support\libs-win\$(TargetFileName)&quot;"/>
+				Name="VCPostBuildEventTool"/>
 			<Tool
 				Name="VCPreBuildEventTool"/>
 			<Tool
@@ -80,9 +78,7 @@
 			<Tool
 				Name="VCMIDLTool"/>
 			<Tool
-				Name="VCPostBuildEventTool"
-				Description="Lib nach marionette/Support/libs-win kopieren"
-				CommandLine="copy &quot;$(TargetPath)&quot; &quot;$(ProjectDir)\..\marionette\Support\libs-win\$(TargetFileName)&quot;"/>
+				Name="VCPostBuildEventTool"/>
 			<Tool
 				Name="VCPreBuildEventTool"/>
 			<Tool
@@ -102,6 +98,12 @@
 	<References>
 	</References>
 	<Files>
+		<File
+			RelativePath=".\simon\AnalyticCollisionDetection.cpp">
+		</File>
+		<File
+			RelativePath=".\simon\AnalyticCollisionDetection.h">
+		</File>
 		<File
 			RelativePath=".\simon\BallAndSocketConstraint.cpp">
 		</File>
@@ -145,10 +147,7 @@
 			RelativePath=".\simon\ClothSystem.h">
 		</File>
 		<File
-			RelativePath=".\simon\CollisionSystem.cpp">
-		</File>
-		<File
-			RelativePath=".\simon\CollisionSystem.h">
+			RelativePath=".\simon\CollisionDetection.h">
 		</File>
 		<File
 			RelativePath=".\simon\config.h">
@@ -190,13 +189,10 @@
 			RelativePath=".\simon\Geometry.h">
 		</File>
 		<File
-			RelativePath=".\simon\Graphics.cpp">
+			RelativePath=".\simon\GeometrySystem.cpp">
 		</File>
 		<File
-			RelativePath=".\simon\Graphics.h">
-		</File>
-		<File
-			RelativePath=".\simon\GraphicsBase.cpp">
+			RelativePath=".\simon\GeometrySystem.h">
 		</File>
 		<File
 			RelativePath=".\simon\HingeConstraint.cpp">

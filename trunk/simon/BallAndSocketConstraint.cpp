@@ -57,6 +57,7 @@
 #include <simon/BallAndSocketConstraint.h>
 #include <iostream>  // NUR VORLAEUFIG!!!
 #include <cmath>
+#include <float.h> //für ISNAN/ISINF
 
 #include <simon/SmartPointer.h>
 

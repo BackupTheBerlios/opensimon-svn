@@ -8,10 +8,6 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "visualSimon", "visualSimon.
 		{101E1903-B941-4DCF-A36F-4F30B1F51708} = {101E1903-B941-4DCF-A36F-4F30B1F51708}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testEnvironment", "testEnvironment.vcproj", "{0866EFCE-2125-4005-A8F0-9A3F5C5B5187}"
-	ProjectSection(ProjectDependencies) = postProject
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfiguration) = preSolution
 		Debug = Debug
@@ -24,9 +20,6 @@ Global
 		{101E1903-B941-4DCF-A36F-4F30B1F51708}.Release.Build.0 = Release|Win32
 		{6054DB20-D730-482C-A713-897C02A78C4D}.Debug.ActiveCfg = Debug|Win32
 		{6054DB20-D730-482C-A713-897C02A78C4D}.Release.ActiveCfg = Release|Win32
-		{0866EFCE-2125-4005-A8F0-9A3F5C5B5187}.Debug.ActiveCfg = Debug|Win32
-		{0866EFCE-2125-4005-A8F0-9A3F5C5B5187}.Debug.Build.0 = Debug|Win32
-		{0866EFCE-2125-4005-A8F0-9A3F5C5B5187}.Release.ActiveCfg = Release|Win32
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 	EndGlobalSection
