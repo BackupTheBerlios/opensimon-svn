@@ -37,7 +37,7 @@ AC_DEFUN([SIMON_ENABLE_PROFILING],
 		if test "${enableval}" = yes; then
 			AC_DEFINE(SIMON_PROFILE, 1,
 				[Controls wether gprof should be used])
-			SIMON_CXXFLAGS="$SIMON_CXXFLAGS -pg -O0"
+			SIMON_CXXFLAGS="$SIMON_CXXFLAGS -pg -O2"
 		fi
 	]
 )
