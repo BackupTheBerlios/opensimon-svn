@@ -20,7 +20,18 @@ Flex and Bison will be neccessary only for our internal test application.
 <div id="single">
 	  <h2>Getting the latest and greatest</h2>
 
-<p>We use a Subversion repository for developement. Instructions for anonymous checkout will follow soon.</p>
+<p>
+	We use a <a href="http://svn.berlios.de/viewcvs/opensimon">Subversion
+	repository</a> at berliOS for developement.<br/><br/>
+
+	To get the developemend HEAD of simon just type <br/>
+	
+	<i>svn checkout svn://svn.berlios.de/opensimon/trunk</i>
+	If you don't have Subversion installed get it at 
+	<a href="http://subversion.tigris.org/">http://subversion.tigris.org/</a><br/><br/>
+	
+	For compiling the source look into the INSTALL file.
+</p>
 
 </div>
 

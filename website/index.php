@@ -2,6 +2,10 @@
 
 <div id="left"> <h2>News</h2>
 
+    <p><b>12 Mar 05</b> - The source in now available through our 
+    <a href="http://svn.berlios.de/viewcvs/opensimon/trunk">SVN repository</a>.
+    </p> 
+
     <p><b>02 Feb 05</b> - We are going open source.</p> 
     
     <p><b>07 Jan 05</b> - Simon will be presented on the 

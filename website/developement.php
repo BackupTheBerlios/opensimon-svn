@@ -8,8 +8,11 @@
 
 <div id="right">
 	<h2>What can i do?</h2>
-	<p>Until we have an anonymous access you can ask <a href="mailto:trappe@uni-koblenz.de">me</a> if you want to look at the source.<br/>
-	In a few days we will open the Subversion repository.</p>
+	<p>
+	Check out the source from our SVN repository and play around with it. 
+	Help us finding bugs, improve the code or even better: write new cool
+	features for Simon.
+	</p>
 </div>
 
  <?php include "footer.php"; ?>
