@@ -1,0 +1,64 @@
+global{
+	gravity 0 0 0
+	angular-viscosity-slowdown 0.8
+	linear-viscosity-slowdown 1
+	no-collision
+}
+
+
+/*
+plane{
+	position 0 -300 0
+	fixed
+}
+*/
+
+// first box should be fixed
+box{  
+	num 1
+	pos 0 300 0
+	scale 30 30 30
+	mass 400 // the constraints arent looking for fixed attrib :(
+	//steady_force 0 7.85 0
+//	fixed
+}
+
+box{  
+	num 2
+	pos 0 200 0
+	scale 30 30 30
+	mass 100
+}
+
+box{  
+	num 3
+	pos 0 100 0
+	scale 30 30 30
+	mass 100
+}
+
+box{  
+	num 4
+	pos 1 0 0
+	scale 30 30 30
+	mass 200
+	force 200 0 0
+}
+
+balljoint{
+	connect 1 2
+	anchor_a 0 -50 0
+	anchor_b 0 50 0
+}
+
+balljoint{
+	connect 2 3
+	anchor_a 0 -50 0
+	anchor_b 0 50 0
+}
+
+balljoint{
+	connect 3 4
+	anchor_a 0 -50 0
+	anchor_b 0 50 0
+}

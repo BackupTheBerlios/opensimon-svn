@@ -1,0 +1,27 @@
+global{
+	contact-threshold 0.2   // dont show contact informations
+	angular-viscosity-slowdown 1
+	linear-viscosity-slowdown 1
+	integration-intervall 0.1
+}
+
+sphere{  
+	pos 0 100 0 
+	radius 100 
+	mass 100
+	bounciness 0.8
+	friction 0.7
+}
+
+box{
+	pos 110 400 0
+	scale 100 100 100
+	mass 120
+	bounciness 0.7
+}
+
+
+plane{
+	fixed
+	bounciness 0.8
+}

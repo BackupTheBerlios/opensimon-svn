@@ -1,0 +1,50 @@
+global{
+	contact-threshold 0   // dont show contact informations
+	angular-viscosity-slowdown 1
+	linear-viscosity-slowdown 1
+}
+
+
+sphere{
+	pos 80 500 -300
+	radius 40
+	mass 100
+	friction 0.6
+	bounciness 0.6
+}
+
+capsule{
+	pos 100 500 -400
+	radius 40
+	height 300
+	mass 100
+	friction 0.6
+	orientation 20 1 0 1
+	bounciness 0.3
+}
+
+capsule{
+	pos 0 500 -400
+	radius 60
+	height 300
+	mass 120
+	friction 0.6
+	orientation 1 1 0 1
+	bounciness 0.5
+}
+
+capsule{
+	pos 100 200 -400
+	radius 40
+	height 200
+	mass 120
+	friction 0.6
+	orientation 70 1 0 1
+	bounciness 0.7
+}
+
+plane{
+	fixed
+	friction 0.7
+	bounciness 0.8
+}

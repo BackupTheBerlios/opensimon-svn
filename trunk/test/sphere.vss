@@ -1,0 +1,43 @@
+global{
+	contact-threshold 0   // dont show contact informations
+	angular-viscosity-slowdown	 1
+	linear-viscosity-slowdown 1
+	integration-intervall 5
+	integrations-per-frame 2
+	framerate 30
+//	no-collision
+}
+
+// cxdd
+sphere{  
+	pos 22 400 330 
+	radius 100 
+	mass 1000
+	bounciness 0.8
+	friction 0.7
+}
+
+// cxdd
+sphere{  
+	pos 322 400 330 
+	radius 50 
+	mass 100
+	steady_force -0.1 0 0
+	bounciness 0.8
+	friction 0.4
+}
+
+plane{
+	fixed
+	bounciness 0.8
+	friction 0.6
+}
+ 
+sphere{
+	position 0 400 0
+	radius 100
+	mass 300
+	bounciness 0.6
+	friction 0.4
+}
+

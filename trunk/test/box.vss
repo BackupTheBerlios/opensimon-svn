@@ -1,0 +1,31 @@
+global{
+	contact-threshold 0
+	angular-viscosity-slowdown 1
+	linear-viscosity-slowdown 1
+	integration-intervall 1
+}
+
+box{  
+	pos 0 400 0 
+	scale 40 40 40
+	mass 1000
+	bounciness 0.8
+	orientation 10 1 1 0
+	friction 0.7
+}
+
+box{  
+	pos 0 100 0 
+	scale 100 100 100
+	mass 1000
+	bounciness 0.8
+	friction 0.7
+	fixed
+}
+
+/*
+plane{
+	fixed
+	bounciness 0.8
+}
+*/

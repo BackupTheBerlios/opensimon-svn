@@ -1,0 +1,35 @@
+global{
+	contact-threshold 40   // dont show contact informations
+	angular-viscosity-slowdown 1
+	linear-viscosity-slowdown 1
+	integration-intervall 3
+}
+
+sphere{  
+	pos 22 400 330 
+	radius 100 
+	mass 1000
+	bounciness 0.8
+	friction 0.7
+}
+
+box{
+	pos 0 300 0
+	scale 100 100 30
+	mass 120
+	bounciness 0.7
+}
+
+capsule{
+	pos 200 200 -400
+	radius 40
+	height 300
+	mass 120
+	orientation 20 1 0 1
+	bounciness 0.3
+}
+
+plane{
+	fixed
+	bounciness 0.8
+}
