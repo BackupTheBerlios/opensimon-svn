@@ -28,7 +28,7 @@ GraphicsRIB::GraphicsRIB ()
   mFileNamePass1 = string ("visualSimonPass1");
   mFileNamePass2 = string ("visualSimonPass2");
   mFileNamePass3 = string ("visualSimonPass3");
-  mPath = string ("rendering/");
+  mPath = string ("renderings/");
   mFrameNumber = 0;
   mSphereNumber = 0;
   mPlaneNumber = 0;
