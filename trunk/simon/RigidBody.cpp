@@ -526,7 +526,7 @@ void RigidBody::addTorque(Vec3 torque){
 	assert(!ISNAN(torque[0]) || !ISNAN(torque[1]) || !ISNAN(torque[2]));
 	assert(!ISINF(torque[0]) || !ISINF(torque[1]) || !ISINF(torque[2]));
 
-mTorque += torque;
+	mTorque += torque;
 	//neue angularAcceleration setzen
 	Matrix3x1 m(getInvWorldInertiaTensor() * mTorque);
 	mAngularAcceleration[0] = m[0][0];
@@ -822,4 +822,19 @@ void RigidBody::integrateEulerPositions(float interval,
 		setForce(Vec3(0, 0, 0));
 		setTorque(Vec3(0, 0, 0));
 	}	
+}
+
+std::ostream& operator <<(std::ostream& os, const RigidBody& rb) {
+
+	os << "ID: " << rb.getId() << endl
+	   << "position: " << rb.getPosition() << endl
+	   << "orientation: " << rb.getOrientation() << endl
+	   << "linear momentum: " << rb.getLinearMomentum() << endl
+	   << "angular momentum: " << rb.getAngularMomentum() << endl
+	   << "linear velocity: " << rb.getVelocity() << endl
+	   << "angular velocity: " << rb.getAngularVelocity() << endl
+	   << "torque: " << rb.getTorque() << endl
+	   << "angular acceleration: " << rb.getAngularAcceleration() << endl
+	   << "inverse inertia tensor: " << rb.getInvInertiaTensor() << endl;
+	return os;
 }

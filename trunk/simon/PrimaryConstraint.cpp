@@ -452,3 +452,11 @@ void PrimaryConstraint::swapBodies() {
 	mRB2 = tempRB; 
 
 }
+
+RigidBodyPtr PrimaryConstraint::getRigidBodyA(){
+	return mRB1;
+}
+
+RigidBodyPtr PrimaryConstraint::getRigidBodyB(){
+	return mRB2;
+}

@@ -255,8 +255,7 @@ void WorldObject::setIsDynamicFlag(bool flag){
 * \brief Gibt die ID zurück
 * \return Id
 */
-Id const WorldObject::getId()
-{
+Id const WorldObject::getId() const {
 	return mId;
 }
 

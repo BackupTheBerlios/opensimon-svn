@@ -33,9 +33,6 @@
 /**
 *  \file PrimaryConstraint.h
 *  \class PrimaryConstraint
-*  $Author: alangs $
-*  $Date: 2004/12/14 18:29:46 $
-*  $Revision: 1.29 $
 */
 //------------------------------------------------------------------------------
 
@@ -148,6 +145,11 @@ public:
 	virtual void swapBodies();
 	static void doBaumgarteStabilisation(bool);
 	static bool doesBaumgarteStabilisation();
+
+	//! Access to the first RigidBody 
+	RigidBodyPtr getRigidBodyA();
+	//! Access to the second RigidBody 
+	RigidBodyPtr getRigidBodyB();
 
 // protected:
 

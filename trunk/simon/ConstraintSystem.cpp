@@ -431,12 +431,15 @@ void ConstraintSystem::computeNodeValues(ConstraintMatrixNode* node) {
 
 
 /**
-\brief After the computeSolution step, the results have to be written back into the RigidBodies
+ * \brief After the computeSolution step, the results have to be
+ * written back into the RigidBodies
 */
 void ConstraintSystem::updateAllRigidBodies() {
 	std::map<Id, PrimaryConstraintPtr>::iterator constraintItr;
 	PrimaryConstraintPtr constraint;
-	for(constraintItr = mConstraints.begin(); constraintItr != mConstraints.end();++constraintItr) {
+	for(constraintItr = mConstraints.begin(); 
+		constraintItr != mConstraints.end();
+		++constraintItr) {
 		constraint = constraintItr->second;
 		constraint->updateRigidBodies();
 	}
@@ -532,7 +535,10 @@ void ConstraintSystem::computePostStabilization (bool fast)
   bool forPostStabilization = true;
 
   //process all independant graphs seperately
-  for (rootsIterator = mRoots.begin (); rootsIterator != rootsEnd; ++rootsIterator) {
+  for (rootsIterator = mRoots.begin (); 
+	   rootsIterator != rootsEnd; 
+	   ++rootsIterator) {
+
     root = rootsIterator->second;
 
     // mList.clear();      // it is supposed that no new constraints

@@ -63,7 +63,7 @@ public:
 
 	//@{
 	//! getter
-	Id const getId(); // Gibt die ID zurück
+	Id const getId() const; // Gibt die ID zurück
 	float const getMass(); // Gibt die Masse zurück
 	float const getInvMass(); // Gibt die Masse zurück	
 	Vec3 const getForce() const; // Gibt die Kraft als Vektor zurück

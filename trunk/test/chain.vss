@@ -1,6 +1,6 @@
 global{
 	gravity 0 0 0
-	angular-viscosity-slowdown 0.8
+	angular-viscosity-slowdown 0.99
 	linear-viscosity-slowdown 1
 	no-collision
 }
@@ -18,9 +18,8 @@ box{
 	num 1
 	pos 0 300 0
 	scale 30 30 30
-	mass 400 // the constraints arent looking for fixed attrib :(
-	//steady_force 0 7.85 0
-//	fixed
+	mass 100
+	//fixed
 }
 
 box{  
@@ -28,6 +27,7 @@ box{
 	pos 0 200 0
 	scale 30 30 30
 	mass 100
+	//steady-force 0 0 1
 }
 
 box{  
@@ -42,23 +42,23 @@ box{
 	pos 1 0 0
 	scale 30 30 30
 	mass 200
-	force 200 0 0
+	steady-force 1 0 0
 }
 
 balljoint{
 	connect 1 2
-	anchor_a 0 -50 0
-	anchor_b 0 50 0
+	anchor-a 0 -50 0
+	anchor-b 0 50 0
 }
 
 balljoint{
 	connect 2 3
-	anchor_a 0 -50 0
-	anchor_b 0 50 0
+	anchor-a 0 -50 0
+	anchor-b 0 50 0
 }
 
 balljoint{
 	connect 3 4
-	anchor_a 0 -50 0
-	anchor_b 0 50 0
+	anchor-a 0 -50 0
+	anchor-b 0 50 0
 }

@@ -61,7 +61,7 @@ orientation		return ORIENTATION;
 ori				return ORIENTATION;
 fixed			return FIXED;
 force			return FORCE;
-steady_force	return STEADYFORCE;
+steady-force	return STEADYFORCE;
 
 radius			return RADIUS;
 rad 			return RADIUS;
@@ -76,8 +76,8 @@ friction 		return FRICTION;
 balljoint		return BALLJOINT;
 
 connect			return CONNECT;
-anchor_a		return ANCHOR_A;
-anchor_b		return ANCHOR_B;
+anchor-a		return ANCHOR_A;
+anchor-b		return ANCHOR_B;
 
 "//".*$			;	// Ignore comments
 

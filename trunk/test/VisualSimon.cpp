@@ -128,6 +128,7 @@ void VisualSimon::display(void){
 		SimonState::exemplar()->getBodySystem()->addGravity();
 
 		SimonState::exemplar()->getConstraintSystem()->step();
+		//SimonState::exemplar()->getConstraintSystem()->computePostStabilization();
 
 		if (scene.testCollisions())
 			// Collision test shoud be done about five times (Fedkiw)
@@ -149,8 +150,16 @@ void VisualSimon::display(void){
 	mGraphicContext->finishFrame();
 	mRIBContext->finishFrame();
 
+	showSimonLogs();
+
 	watch.fillUp(1000/scene.getFramerate());
 
+}
+
+void VisualSimon::showSimonLogs(){
+	SimonState::exemplar()->printMessages();
+	SimonState::exemplar()->printWarnings();
+	SimonState::exemplar()->printErrors();
 }
 
 /**

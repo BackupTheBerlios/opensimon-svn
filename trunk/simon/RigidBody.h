@@ -86,10 +86,15 @@ public:
 	
 	
 	//OTHER
+
+	//! save velocities for eventual restoring
 	void backupVelocities();
+	//! restore the saved velocities
 	void restoreVelocities();
 
+	//! save positions for eventual restoring
 	void backupPositions();
+	//! restore the saved positions
 	void restorePositions();
 	
 	void addTorque(Vec3); 			//addiert ein Drehmoment hinzu
@@ -97,7 +102,8 @@ public:
 	void processConstraintPostStabilization (Matrix6x1);//Verarbeitet die Poststabilisation der Gelenke
 	void computeForceAndTorque(Matrix6x1);		//Berechnet aus einer 6x1-Matrix (0-2 -> Angriffspunkt in Weltkoordinaten; 3-5 -> Force) den Drehmoment
 	
-	
+	friend std::ostream& operator <<(std::ostream& os, const RigidBody& rb);
+
 	
 	//INTEGRATOREN
 	
@@ -156,8 +162,7 @@ private:
 	/** inverser Trägheitstensor in Body-Koordinaten */
 	Matrix3x3 mInvInertiaTensor;
 	
-	
-	/** Variablen fuer Integratoren */
+	/** Cached variables for integration acceleration */
 	Vec3 mIntegratorForce;
 	Vec3 mIntegratorTorque;
 	Vec3 mIntegratorPosition;

@@ -61,6 +61,9 @@ private:
 	//! read in the scene description
 	void processSceneDescription();
 
+	//! perform log messages/warnings/errors to cout
+	void showSimonLogs();
+
 	GraphicsBase* mGraphicContext;
 	GraphicsBase* mRIBContext;
 

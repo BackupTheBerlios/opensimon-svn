@@ -617,13 +617,10 @@ void BallAndSocketConstraint::updateRigidBodies ()
 		spaceForce2 = Matrix6x1(0.0f);
 	}
 
-	assert (spaceForce1.getSizeM () == 6);
-	assert (spaceForce2.getSizeM () == 6);
-	assert (spaceForce1.getSizeN () == 1);
-	assert (spaceForce2.getSizeN () == 1);
-  
-	boost::static_pointer_cast <RigidBody> (getObjectA ())->processConstraints (spaceForce1);
-	boost::static_pointer_cast <RigidBody> (getObjectB ())->processConstraints (spaceForce2);
+	boost::static_pointer_cast <RigidBody> (getObjectA ())->
+		processConstraints (spaceForce1);
+	boost::static_pointer_cast <RigidBody> (getObjectB ())->
+		processConstraints (spaceForce2);
 
 }
 

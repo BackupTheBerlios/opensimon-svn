@@ -22,7 +22,7 @@ sphere{
 	pos 322 400 330 
 	radius 50 
 	mass 100
-	steady_force -0.1 0 0
+	steady-force -0.1 0 0
 	bounciness 0.8
 	friction 0.4
 }

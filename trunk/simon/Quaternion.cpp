@@ -88,9 +88,9 @@ Quaternion::Quaternion(float w, float x, float y, float z){
 * \brief Konstruktor, der aus einem Winkel (angle im Bogenmaß) und der Rotationsachse (axis) ein RotationsQuaternion erstellt. Die RotationsAchse wird normalisiert
 *
 * \param float angle Bogenmaß der Drehung.
-* \param Vector3<float> axis
+* \param Vec3 axis
 */
-Quaternion::Quaternion(float angle, Vector3<float> axis){
+Quaternion::Quaternion(float angle, Vec3 axis){
 	float tempSin = sinf(angle / 2.f);
 	axis.normalize();
 	mqElement[0] = cos(angle / 2.f);
@@ -134,10 +134,10 @@ Quaternion::Quaternion(float phix, float phiy, float phiz){
 
 /**
 * \brief Konstruktor, der ein aus einem Vektor ein pures Quaternion erstellt
-* \param Vector3<float> v (Vektor, z.B. ein Punkt, der rotiert werden soll)
+* \param Vec3 v (Vektor, z.B. ein Punkt, der rotiert werden soll)
 * \todo Ahhhrg. Was mach das ding und wieso? bitte besser kommentieren oder entfernen.
 */
-Quaternion::Quaternion(Vector3<float> v){
+Quaternion::Quaternion(Vec3 v){
     mqElement[0] = 0;
 	mqElement[1] = v[0];
 	mqElement[2] = v[1];
@@ -314,7 +314,7 @@ void Quaternion::normalizeAxis() {
     float x = mqElement[1]/denom;
     float y = mqElement[2]/denom;
     float z = mqElement[3]/denom;
-    Vector3<float> axis = Vector3<float>(x, y, z);
+    Vec3 axis = Vec3(x, y, z);
 	axis.normalize();
 	mqElement[1] = axis[0]*denom;
 	mqElement[2] = axis[1]*denom;
@@ -336,9 +336,9 @@ void Quaternion::setValues(float w, float x, float y, float z){
 * \brief Setzt die WErte des RotationsQuaternion aus Winkel (angle im Bogenmaß) und der Rotationsachse (axis) neu
 *
 * \param float angle Bogenmaß der Drehung.
-* \param Vector3<float> axis
+* \param Vec3 axis
 */
-void Quaternion::setValues(float angle, Vector3<float>& axis){
+void Quaternion::setValues(float angle, Vec3& axis){
 	float tempSin = sinf(angle / 2);
 
 	mqElement[0] = cosf(angle / 2);
@@ -360,7 +360,7 @@ void Quaternion::setValues(float x, float y, float z) {
 * \brief setzt die Werte des Vektorteils im Quaternion neu
 * \return Setzt die Werte in den übergebenen Referenzen
 */
-void Quaternion::setVector(const Vector3<float>& v) {
+void Quaternion::setVector(const Vec3& v) {
 	mqElement[1] = v[0];
 	mqElement[2] = v[1];
 	mqElement[3] = v[2];
@@ -370,7 +370,7 @@ void Quaternion::setVector(const Vector3<float>& v) {
 * \brief Gibt die Werte des Quaternion in der Achsen- und Winkel-Form zurück
 * \return Setzt die Werte in den übergebenen Referenzen
 */
-void Quaternion::getAxisAngle(Vector3<float>& axis, float& angle) const {
+void Quaternion::getAxisAngle(Vec3& axis, float& angle) const {
 	float s = sqrt((mqElement[1] * mqElement[1]) + (mqElement[2] * mqElement[2]) + (mqElement[3] * mqElement[3]));
 
 	if (s == 0) {
@@ -449,14 +449,14 @@ float Quaternion::z() const {
 
 /**
 * \brief Gibt den Vektor des Quaternions zurück
-* \return Vector3<float>
+* \return Vec3
 */
-Vector3<float> Quaternion::getVector () const{
-	return Vector3<float>(mqElement[1], mqElement[2], mqElement[3]);
+Vec3 Quaternion::getVector () const{
+	return Vec3(mqElement[1], mqElement[2], mqElement[3]);
 }
 /**
 * \brief Gibt die Werte des Quaternions als Euler Winkel zurück (im Bogenmaß)
-* \return Vector3<float> (Euler-Winkel des Quaternions)
+* \return Vec3 (Euler-Winkel des Quaternions)
 *
 * Konvention: Rz*Ry*Rx !!! (s.o.)
 * Angepasster Code aus GraphicsGems IV, Kapitel III.5 (Euler-Angle-Conversion)
@@ -492,7 +492,7 @@ void Quaternion::getEulerRotation(Vec3 &rotation) const {
 	assert(!ISNAN(rotation[Z]));
 }
 
-Vector3<float> Quaternion::getEulerRotation() const {
+Vec3 Quaternion::getEulerRotation() const {
 
   Vec3 rotation;
   getEulerRotation(rotation);
@@ -618,14 +618,14 @@ float dot(const Quaternion& lhs, const Quaternion& rhs){
 * \param quat das Orientierungs-Quaternion, um welches gedreht wird 
 * \return um Quaternion rotierter Vektor
 */
-const Vector3<float> qRotate(const Vector3<float>& vector, const Quaternion& qRot)
+const Vec3 qRotate(const Vec3& vector, const Quaternion& qRot)
 {
     Quaternion qInvRot = qRot;
     qInvRot.invert();
 	Quaternion qVector(vector);
     qVector = qRot * qVector * qInvRot;
     
-    return Vector3<float>(qVector[1], qVector[2], qVector[3]);
+    return Vec3(qVector[1], qVector[2], qVector[3]);
 } 
 
 std::ostream& operator <<(std::ostream& os, const Quaternion& quaternion) {
@@ -635,11 +635,11 @@ std::ostream& operator <<(std::ostream& os, const Quaternion& quaternion) {
 	os << "Y: " << quaternion[2] << ", ";
 	os << "Z: " << quaternion[3] << "    oder:    ";
 
-	Vector3<float> vec;
+	Vec3 vec;
 	float ang;
 	quaternion.getAxisAngle(vec, ang);
 
-	os << "Winkel: " << ang << " Achse: " << vec << std::endl;
+	os << "Winkel: " << ang << " Achse: " << vec;
 	
 	return os;
 }
