@@ -157,11 +157,11 @@ void GeometrySystem::resolveCollisions(float interval){
  *
  * \author Nils Hornung
  */
-void GeometrySystem::collisionResponse (GeometryPtr objectA, 
-										GeometryPtr objectB, 
-										ContactPoint &contactPoint, 
-										bool forCollision, 
-										float contactRestitution) {
+void GeometrySystem::collisionResponse(GeometryPtr objectA, 
+									   GeometryPtr objectB, 
+									   ContactPoint &contactPoint, 
+									   bool forCollision, 
+									   float contactRestitution) {
 
 	float invMassA = objectA->getRigidBody()->getInvMass();
 	float invMassB = objectB->getRigidBody()->getInvMass();
@@ -305,7 +305,7 @@ void GeometrySystem::collisionResponse (GeometryPtr objectA,
 	//! \todo check, which of the two denominator computations is prettier
 	float denominator = (dot (Vec3 (KT * normal), (normal - friction *
 												   tangent)));
-	//float denominator = dot (normal, Vec3 (KT * (normal - friction *tangent)));
+//	float denominator = dot (normal, Vec3 (KT * (normal - friction *tangent)));
 
 	float normalImpulse = 0.0f;
 	if (denominator != 0.0f)
@@ -315,15 +315,16 @@ void GeometrySystem::collisionResponse (GeometryPtr objectA,
 	// compute impulse for sliding friction
 	impulse = normalImpulse * normal - friction * normalImpulse * tangent;
 
-	// ??? Einfach mal irgendwas uebergeben...
+	// ??? Just save something strage...
 	float grindMagnitude = friction * normalImpulse * tangent.length ();
 	contactPoint.setGrindMagnitude (grindMagnitude);
 
 	// set impulse for sliding friction
 	velocityA += invMassA * impulse;
 	velocityB -= invMassB * impulse;
-	angularVelocityA += invWorldInertiaTensorA * (cross (radiusA, impulse));
-	angularVelocityB -= invWorldInertiaTensorB * (cross (radiusB, impulse));
+	//! \todo Why is the angular velocity computation produceing ugly rotations?
+// 	angularVelocityA += invWorldInertiaTensorA * (cross (radiusA, impulse));
+// 	angularVelocityB -= invWorldInertiaTensorB * (cross (radiusB, impulse));
 	rbA->setVelocity (velocityA);
 	rbB->setVelocity (velocityB);
 	rbA->setAngularVelocity (angularVelocityA);
