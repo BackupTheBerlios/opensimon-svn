@@ -770,8 +770,6 @@ void RigidBody::integrateEulerVelocities(float interval)
 		mIntegratorNewAngularMomentum[X]> 1000000.00 || mIntegratorNewAngularMomentum[Y] > 1000000.00 || mIntegratorNewAngularMomentum[Z] > 1000000.00){
 		SimonState::exemplar()->clearSimulationSystems();
 		SimonState::exemplar()->errors << "Woa! Simon is getting instable. Start again if you want." << SimonState::endm;
-		cout << "linar :" <<  mIntegratorNewLinearMomentum << endl;
-		cout << "angular: " << mIntegratorNewAngularMomentum << endl;
 		return;
 	}
 }
