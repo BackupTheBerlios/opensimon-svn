@@ -1,0 +1,6 @@
+
+/**
+ * \class CollisionDetection
+ */
+
+CollisionDetection::

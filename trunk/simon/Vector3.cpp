@@ -1,0 +1,40 @@
+/**
+ * Simon is the legal property of its developers, whose names are too
+ * numerous to list here.  Please refer to the COPYRIGHT file
+ * distributed with this source distribution.
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 2.1 of the License, or (at your option) any later version.
+ * 
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ * 
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ *
+ */
+
+
+//------------------------------------------------------------------------------
+/**
+ * \class Vector3
+ * \brief Implemetation von Vector3 Funktionen
+ *
+ * relatet functions to the Vector3 template class.
+ * 
+ * 
+ */
+//------------------------------------------------------------------------------
+
+//includes
+#include "Quaternion.h"
+#include "Vector3.h"
+
+
+Vector3<float> Vector3<float>::nullVector(0,0,0);
+
