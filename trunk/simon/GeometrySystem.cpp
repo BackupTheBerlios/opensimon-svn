@@ -323,8 +323,8 @@ void GeometrySystem::collisionResponse(GeometryPtr objectA,
 	velocityA += invMassA * impulse;
 	velocityB -= invMassB * impulse;
 	//! \todo Why is the angular velocity computation produceing ugly rotations?
-// 	angularVelocityA += invWorldInertiaTensorA * (cross (radiusA, impulse));
-// 	angularVelocityB -= invWorldInertiaTensorB * (cross (radiusB, impulse));
+ 	angularVelocityA += invWorldInertiaTensorA * (cross (radiusA, impulse));
+ 	angularVelocityB -= invWorldInertiaTensorB * (cross (impulse,radiusB));
 	rbA->setVelocity (velocityA);
 	rbB->setVelocity (velocityB);
 	rbA->setAngularVelocity (angularVelocityA);
