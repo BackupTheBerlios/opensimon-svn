@@ -61,7 +61,7 @@ public:
 		const Vec3& position,
 		const Vec3& scale,
 		const Quaternion& orientation,
-		const Material material) {};
+		const Material material);
 
 	virtual void drawPlane(
 		const Vec3& position,
@@ -89,7 +89,7 @@ public:
 		float radius, 
 		float height,
 		const Quaternion& orientation,
-		const Material material) {};
+		const Material material);
 
 	virtual void drawCapsule(
 		const Vec3& position, 
@@ -100,9 +100,57 @@ public:
 	virtual void drawContactPoint(
 		ContactPoint& contactPoint,
 		const Material material) {};
+
   private:
+    virtual void drawPlaneGeometry (
+        const Vec3& position,
+        const Vec3& axis,
+        float angle,
+        float size,
+        const Material material,
+        std::ostringstream& stream);
+
+    virtual void drawSphereGeometry (
+   	    const Vec3& position, 
+   	    const Vec3& axis,
+        float angle,
+        float radius,
+   	    const Material material,
+        std::ostringstream& stream);
+
+    void drawBoxGeometry (
+        const Vec3& position,
+        const Vec3& scale,
+        const Vec3& axis,
+        float angle,
+        const Material material,
+        std::ostringstream& stream);
+
+    void drawCapsuleGeometry (
+        const Vec3& position,
+        const Vec3& axis,
+        float angle,
+        float radius,
+        float height,
+        const Material material,
+        std::ostringstream& stream);
+
+    void writeDisplayOptions (std::ostringstream& stream);
+    void writeCameraProject (float fov, std::ostringstream& stream);
+    void writeLightSources (int intensity, std::ostringstream& stream);
+
+    void GraphicsRIB::writeCameraTransform (
+        float cam00, float cam01, float cam02,
+        float cam10, float cam11, float cam12,
+        float cam20, float cam21, float cam22,
+        const Vec3& position,
+        //float rotationX,
+        //float rotationZ,
+        std::ostringstream& stream);
+
     const std::string getColor   (Material material);
     const std::string getSurface (Material material);
+
     std::ostringstream mFile;
     std::ostringstream mPass1;
     std::ostringstream mPass2;
@@ -115,6 +163,8 @@ public:
     int mFrameNumber;
     int mSphereNumber;
     int mPlaneNumber;
+    int mBoxNumber;
+    int mCapsuleNumber;
 };
 
 #endif

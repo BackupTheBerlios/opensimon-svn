@@ -17,6 +17,9 @@ SceneDescription::SceneDescription(){
 	mTestCollisions = true;
 	mFramerate = 30;
 	mIntegrationsPerFrame = 2;
+
+	mCamPosition = Vec3(1000, 1000, 0);
+	mCenterOfInterest = Vec3(0,0,0);
 }
 
 void SceneDescription::testCollisions(bool flag){
@@ -42,4 +45,21 @@ void SceneDescription::setFramerate(int x){
 
 int SceneDescription::getFramerate(){
 	return mFramerate;
+}
+
+
+void SceneDescription::setCameraPosition(Vec3 pos){
+	mCamPosition = pos;
+}
+
+Vec3 SceneDescription::getCameraPosition(){
+	return mCamPosition;
+}
+
+void SceneDescription::setCenterOfInterest(Vec3 coi){
+	mCenterOfInterest = coi;
+}
+
+Vec3 SceneDescription::getCenterOfInterest(){
+	return mCenterOfInterest;
 }

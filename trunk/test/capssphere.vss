@@ -1,7 +1,11 @@
 global{
 	contact-threshold 0   // dont show contact informations
-	angular-viscosity-slowdown 1
-	linear-viscosity-slowdown 1
+	angular-viscosity-slowdown 0.99
+	linear-viscosity-slowdown 0.99
+	integration-intervall 4
+	integrations-per-frame 10
+	framerate 30
+
 }
 
 

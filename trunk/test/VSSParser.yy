@@ -46,6 +46,7 @@ SceneDescription *sceneDescription;
 %token GRAVITY CONTACTTHRESHOLD NOCOLLISION 
 %token INTEGRATIONINTERVALL INTEGRATIONSPERFRAME FRAMERATE
 %token ANGULARVISCOSITYSLOWDOWN LINEARVISCOSITYSLOWDOWN 
+%token CENTEROFINTEREST CAMERAPOSITION
 %token STEADYFORCE
 %token CONNECT ANCHOR_A ANCHOR_B
 %token POSITION MASS IDNUM ORIENTATION FIXED FORCE
@@ -113,7 +114,14 @@ GlobalAttribute		: GRAVITY NUMBER NUMBER NUMBER
 					{
 						sceneDescription->setFramerate($2);
 					}
-
+					| CAMERAPOSITION NUMBER NUMBER NUMBER
+					{
+						sceneDescription->setCameraPosition(Vec3($2,$3,$4));
+					}
+					| CENTEROFINTEREST NUMBER NUMBER NUMBER
+					{
+						sceneDescription->setCenterOfInterest(Vec3($2,$3,$4));
+					}
 					;
 
 RigidBodyAttribute	: POSITION NUMBER NUMBER NUMBER

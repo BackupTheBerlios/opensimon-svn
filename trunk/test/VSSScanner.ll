@@ -43,7 +43,8 @@ no-collision	return NOCOLLISION;
 integration-intervall return INTEGRATIONINTERVALL;
 integrations-per-frame return INTEGRATIONSPERFRAME;
 framerate 		return FRAMERATE;
-
+cam-pos			return CAMERAPOSITION;
+coi				return CENTEROFINTEREST;
 
 
 sphere			return SPHERE;

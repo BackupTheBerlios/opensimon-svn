@@ -61,20 +61,24 @@ VisualSimon::VisualSimon(const char* fileName) :
 	// set mouse sensibility
 	mMouseSensibilityX = mMouseSensibilityY = 0.01;
 
-	//Anfangseinstellung für Mausbewegung
-	mPhi = 1.4;
-	mTheta = 0.6;
-
-	//one meter distance to the objects
-	mViewRadius = 1000; // millimeters
-	mZoomSensibility = 3;
-
 	mTranslateX = 0.0;
 	mTranslateY = 0.0;
+
+	mZoomSensibility = 3;
 
 	Clock::init();
 	
 	parse(fileName, &scene);
+
+	// getting initial cam pos and coi
+	Vec3 cam = scene.getCameraPosition();
+	Vec3 coi = scene.getCenterOfInterest();
+	mPhi = atan2( sqrt( cam[0]*cam[0] + cam[1]*cam[1] ), cam[2]);
+	mTheta = atan2( cam[1], cam[0] );
+	mViewRadius = sqrt(cam[0]*cam[0] + 
+					   cam[1]*cam[1] + 
+					   cam[2]*cam[2]); // millimeters
+
 
 	ConstraintSystemPtr cs = SimonState::exemplar()->getConstraintSystem();
  	cs->buildGraphs();

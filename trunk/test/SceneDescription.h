@@ -36,6 +36,16 @@ public:
 	//! tells the framerate which should be used
 	int getFramerate();
 
+	//! saves the camera pos
+	void setCameraPosition(Vec3);
+	//! tells the cam position
+	Vec3 getCameraPosition();
+
+	//! saves center of intrest
+	void setCenterOfInterest(Vec3);
+	//! tells the coi
+	Vec3 getCenterOfInterest();
+
 	//! stores all objects in the scene
 	vector<ObjectDescription*> objectVector;
 
@@ -46,6 +56,12 @@ private:
 
 	int mIntegrationsPerFrame;
 	int mFramerate;
+
+	//! camera distance from worldspace (0,0,0)
+	Vec3 mCamPosition;
+
+	//! center of interest
+	Vec3 mCenterOfInterest;
 };
 
 #endif // SCENE_DESCRIPTION_H
