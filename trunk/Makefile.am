@@ -111,7 +111,7 @@ simon/HingeConstraint.cpp simon/HingeConstraint.h \
 simon/ConstraintMatrixNode.cpp simon/ConstraintMatrixNode.h \
 simon/ConstraintSystem.cpp simon/ConstraintSystem.h \
 \
-simon/ParticleSystem.cpp simon/ParitcleSystem.h \
+simon/ParticleSystem.cpp simon/ParticleSystem.h \
 simon/ClothSystem.cpp simon/ClothSystem.h \
 \
 simon/RigidBodySystem.cpp simon/RigidBodySystem.h \
@@ -238,7 +238,7 @@ test_constraints3_LDADD = libsimon.la
 visualSimon_SOURCES = \
 test/VisualSimon.h test/VisualSimon.cpp \
 test/VSSParser.yy test/VSSScanner.ll \
-test/OpenGl.h \
+test/OpenGL.h \
 test/GlutApplication.cpp test/GlutApplication.h \
 test/GlutWindow.cpp test/GlutWindow.h \
 test/ObjectDescription.h test/ObjectDescription.cpp \
@@ -295,3 +295,9 @@ simon/Sphere.h \
 simon/SpringConnection.h \
 simon/Vector3.h \
 simon/WorldObject.h
+
+EXTRA_DIST = \
+test/*.vss \
+visualSimon.vcproj \
+libsimon.vcproj simon.sln \
+COPYRIGHT LICENSE

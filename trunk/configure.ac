@@ -19,7 +19,7 @@
 
 
 AC_PREREQ(2.57)
-AC_INIT([Simon], [0.16], [trappe@uni-koblenz.de])
+AC_INIT([Simon], [0.18], [trappe@uni-koblenz.de])
 
 AC_CONFIG_AUX_DIR(config)
 AM_INIT_AUTOMAKE([foreign subdir-objects])
