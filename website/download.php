@@ -3,7 +3,12 @@
 <div id="left">
 	<h2>Files</h2>
 	
-	<p>We have no tarballs released yet.</p>
+	<p>Grab our first developement snapshot package 
+	<a href="http://download.berlios.de/opensimon/simon-0.18.tar.gz">
+	   simon-0.18.tar.gz</a> from the berliOS site. <br/><br/>
+
+	This tarball is only for test purposes. We have no stable
+	releases at the moment.</p>
 </div>
 
 <div id="right">
@@ -26,7 +31,7 @@ Flex and Bison will be neccessary only for our internal test application.
 
 	To get the developemend HEAD of simon just type <br/>
 	
-	<i>svn checkout svn://svn.berlios.de/opensimon/trunk</i>
+	<i>svn checkout svn://svn.berlios.de/opensimon/trunk</i><br/>
 	If you don't have Subversion installed get it at 
 	<a href="http://subversion.tigris.org/">http://subversion.tigris.org/</a><br/><br/>
 	
