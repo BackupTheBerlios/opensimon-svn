@@ -29,8 +29,9 @@
 //------------------------------------------------------------------------------
 
 #include "GraphicsGL.h"
-#include "Quaternion.h"
-#include "ContactPoint.h"
+
+#include <simon/Quaternion.h>
+#include <simon/ContactPoint.h>
 
 #include <iostream>
 

@@ -25,10 +25,10 @@
 #include <simon/config.h>
 #include <simon/Vector3.h>
 
-#include <GL/gl.h>
-#include <GL/glut.h>
-
 #include "GraphicsBase.h"
+
+#include "OpenGL.h"
+
 
 class GraphicsGL : public GraphicsBase {
 

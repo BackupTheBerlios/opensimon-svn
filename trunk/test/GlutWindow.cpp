@@ -21,7 +21,6 @@
 
 #include "GlutWindow.h"
 #include "GlutApplication.h"
-#include "OpenGL.h"
 
 #include <iostream>
 

@@ -20,7 +20,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="&quot;$(ProjectDir)&quot;;C:\_Projektpraktikum\marionette\Support\incs"
+				AdditionalIncludeDirectories="&quot;$(ProjectDir)&quot;;C:\Programming\3rdParty\boost_1_32_0"
 				PreprocessorDefinitions="WIN32;_DEBUG;_CONSOLE"
 				MinimalRebuild="TRUE"
 				BasicRuntimeChecks="3"
@@ -63,7 +63,7 @@
 			CharacterSet="2">
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalIncludeDirectories="&quot;$(ProjectDir)&quot;;C:\_Projektpraktikum\marionette\Support\incs"
+				AdditionalIncludeDirectories="&quot;$(ProjectDir)&quot;;C:\Programming\3rdParty\boost_1_32_0"
 				PreprocessorDefinitions="WIN32;NDEBUG;_CONSOLE"
 				RuntimeLibrary="2"
 				UsePrecompiledHeader="0"
@@ -145,6 +145,9 @@
 		</File>
 		<File
 			RelativePath=".\simon\ClothSystem.h">
+		</File>
+		<File
+			RelativePath=".\simon\CollisionDetection.cpp">
 		</File>
 		<File
 			RelativePath=".\simon\CollisionDetection.h">
